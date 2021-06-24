@@ -1,0 +1,46 @@
+Import tkinter as tk
+app= tk.Tk()
+app.title("Basic Calcutor")
+app.geometry('500x500')
+output=tk.variable(app)
+val=tk.Variable(app)
+box=tk.Entry(app,textvariable =val,width=37,highlightthickness=3,font=('times new Roman',15,'normal'))
+box.place(x=20,y=10,height=80)
+
+box.config(highlightbackground= "yellow",highlightcolor="blue")
+
+Variable=" "
+
+def operate(e):
+global variable
+variable += str(e)
+val.set(variable)
+ 
+def clear():
+global variable
+box.delete(0,'end')
+variable=''
+ 
+def output(s):
+global variable
+val.set(eval(variable))
+variable =""
+
+tk.button(app,text='1',bd='4',bg='yellow',fg='blue',width= 11,height=2,command=lambda:operator('1')).place(x=21,y=180)
+tk.button(app,text='2',bd='4',bg='yellow',fg='blue',width= 11,height=2,command=lambda:operator('2')).place(x=131,y=180) 
+tk.button(app,text='3',bd='4',bg='yellow',fg='blue',width= 11,height=2,command=lambda:operator('3')).place(x=251,y=180)
+tk.button(app,text='4',bd='4',bg='yellow',fg='blue',width= 11,height=2,command=lambda:operator('4')).place(x=361,y=180) 
+tk.button(app,text='5',bd='4',bg='yellow',fg='blue',width= 11,height=2,command=lambda:operator('5')).place(x=21, y=260)
+tk.button(app,text='6',bd='4',bg='yellow',fg='blue',width= 11,height=2,command=lambda: operator('6')).place(x=131,y=260) 
+tk.button(app,text='7',bd='4',bg='yellow',fg='blue',width= 11,height=2,command=lambda: operator('7')).place(x=251,y=260) 
+tk.button(app,text='8',bd='4',bg='yellow',fg='blue',width= 11,height=2,command=lambda: operator('8')).place(x=361,y=260) 
+tk.button(app,text='9',bd='4',bg='yellow',fg='blue',width= 11,height=2,command=lambda: operator('9')).place(x=21,y=340) 
+tk.button(app,text='0',bd='4',bg='yellow',fg='blue',width= 11,height=2,command=lambda: operator('0')).place(x=131,y=340) 
+tk.button(app,text='+',bd='4',bg='yellow',fg='blue',width= 11,height=2,command=lambda: operator('+')).place(x=251,y=340) 
+tk.button(app,text='-',bd='4',bg='yellow',fg='blue',width= 11,height=2,command=lambda: operator('-')).place(x=361,y=340) 
+tk.button(app,text='*',bd='4',bg='yellow',fg='blue',width= 11,height=2,command=lambda: operator('*')).place(x=21,y=420) 
+tk.button(app,text='/',bd='4',bg='yellow',fg='blue',width= 11,height=2,command=lambda: operator('/')).place(x=131,y=420) 
+tk.button(app,text='=',bd='4',bg='yellow',fg='blue',width= 11,height=2,command=lambda: output('=')).place(x=251,y=420) 
+tk.button(app,text='.',bd='4',bg='yellow',fg='blue',width= 11,height=2,command=lambda:operator('.')).place(x=361,y=420)
+tk.button(app,text='clear',bd='4',bg='yellow',fg='blue',width= 11,height=2, command=lambda:clear()).place(x=361,y=110) 
+app.mainloop
