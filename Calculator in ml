@@ -43,4 +43,4 @@ tk.button(app,text='/',bd='4',bg='yellow',fg='blue',width= 11,height=2,command=l
 tk.button(app,text='=',bd='4',bg='yellow',fg='blue',width= 11,height=2,command=lambda: output('=')).place(x=251,y=420) 
 tk.button(app,text='.',bd='4',bg='yellow',fg='blue',width= 11,height=2,command=lambda:operator('.')).place(x=361,y=420)
 tk.button(app,text='clear',bd='4',bg='yellow',fg='blue',width= 11,height=2, command=lambda:clear()).place(x=361,y=110) 
-app.mainloop
+app.mainloop()
